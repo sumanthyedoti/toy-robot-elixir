@@ -1,20 +1,32 @@
-# ToyRobot
+Toy Robot simulator on a 4x4 table.
 
-**TODO: Add description**
+Placed at a position, it can turn `right`, `left`, `move` one step forward in the
+direction it is facing, and `report` the current position and direction it is
+facing.
 
-## Installation
+The rebot is smart enough not to jump off the edge if you say so.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `toy_robot` to your list of dependencies in `mix.exs`:
+### Start the application:
 
-```elixir
-def deps do
-  [
-    {:toy_robot, "~> 0.1.0"}
-  ]
-end
+```
+cd ../into/the/direction
+iex -S mix
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/toy_robot](https://hexdocs.pm/toy_robot).
+### Robot in action:
+
+```elixir
+iex> {:ok, robot} = ToyRobot.place(1, 1, :east))
+iex> robot = robot |> ToyRobot.move
+iex> robot |> ToyRobot.report
+{2, 1, :east}
+iex> robot = robot |> ToyRobot.right |> ToyRobot.move
+iex> robot |> ToyRobot.report
+{2, 0, :south}
+```
+
+### Run tests
+
+```
+mix test
+```
