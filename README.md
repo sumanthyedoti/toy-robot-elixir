@@ -4,12 +4,12 @@ Placed at a position, it can turn `right`, `left`, `move` one step forward in th
 direction it is facing, and `report` the current position and direction it is
 facing.
 
-The rebot is smart enough not to jump off the edge if you say so.
+The robot is smart enough not to jump off the edge if you say so.
 
 ### Start the application:
 
 ```
-cd ../into/the/direction
+cd ../into/the/directory
 iex -S mix
 ```
 
